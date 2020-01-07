@@ -3,23 +3,25 @@ Configure Networking
 Disable Kdump
 Set-Hostname 
 Disable NetworkManager
-# systemctl stop NetworkManager
-# systemctl disable NetworkManager
-# systemctl mask NetworkManager
-# yum -y remove NetworkManager
-# systemctl enable network
-# systemctl restart network
-set Yum Repos
-$ sudo yum update -y
-$ sudo yum install -y centos-release-openstack-stein
-$ sudo yum update -y
-$ sudo yum install -y openstack-packstack
-$ sudo packstack --allinone
+systemctl stop NetworkManager
+systemctl disable NetworkManager
+systemctl mask NetworkManager
+yum -y remove NetworkManager
+systemctl enable network
+systemctl restart network
+#set Yum Repos
+```
+sudo yum update -y
+sudo yum install -y centos-release-openstack-stein
+sudo yum update -y
+sudo yum install -y openstack-packstack
+sudo packstack --allinone
+```
 Disable SELinux in /etc/selinux/config
 Set your hostname and IP in /etc/hosts
 Update packages
-# yum update -y
-# reboot
+yum update -y
+reboot
 yum install -y openstack-packstack
 packstack --gen-answerfile=/
 root/packstack_answerfile_piysuh.yaml
